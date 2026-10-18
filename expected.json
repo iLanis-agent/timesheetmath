@@ -1,0 +1,196 @@
+[
+ {
+  "fn": "shiftTruth",
+  "args": [
+   "9:00",
+   "17:30",
+   30
+  ],
+  "expected": "9:00 to 17:30, 8 h 30 min on the clock, 30 min unpaid break: 8 h worked, 8.00 decimal hours."
+ },
+ {
+  "fn": "shiftTruth",
+  "args": [
+   "09:00",
+   "17:00",
+   0
+  ],
+  "expected": "9:00 to 17:00, 8 h on the clock, 0 min unpaid break: 8 h worked, 8.00 decimal hours."
+ },
+ {
+  "fn": "shiftTruth",
+  "args": [
+   "22:00",
+   "6:15",
+   45
+  ],
+  "expected": "22:00 to 6:15 (next day), 8 h 15 min on the clock, 45 min unpaid break: 7 h 30 min worked, 7.50 decimal hours."
+ },
+ {
+  "fn": "shiftTruth",
+  "args": [
+   "8:00",
+   "8:20",
+   20
+  ],
+  "expected": "8:00 to 8:20, 20 min on the clock, 20 min unpaid break: 0 min worked, 0.00 decimal hours."
+ },
+ {
+  "fn": "shiftTruth",
+  "args": [
+   "9:00",
+   "9:00",
+   0
+  ],
+  "expected": "ERR:start and end are the same time"
+ },
+ {
+  "fn": "shiftTruth",
+  "args": [
+   "9:00",
+   "25:00",
+   0
+  ],
+  "expected": "ERR:time must look like 9:00 (24-hour clock)"
+ },
+ {
+  "fn": "shiftTruth",
+  "args": [
+   "9am",
+   "17:00",
+   0
+  ],
+  "expected": "ERR:time must look like 9:00 (24-hour clock)"
+ },
+ {
+  "fn": "shiftTruth",
+  "args": [
+   "9:00",
+   "10:00",
+   61
+  ],
+  "expected": "ERR:the break is longer than the shift"
+ },
+ {
+  "fn": "shiftTruth",
+  "args": [
+   "9:00",
+   "17:00",
+   2.5
+  ],
+  "expected": "ERR:break must be a whole number of minutes, 0 or more"
+ },
+ {
+  "fn": "shiftTruth",
+  "args": [
+   "9:00",
+   "17:00",
+   -5
+  ],
+  "expected": "ERR:break must be a whole number of minutes, 0 or more"
+ },
+ {
+  "fn": "weekTruth",
+  "args": [
+   [
+    "7:45",
+    "8:00",
+    "7:30",
+    "8:15",
+    "7:45"
+   ]
+  ],
+  "expected": "5 days: 39 h 15 min, 39.25 decimal hours, 7 h 51 min a day on average."
+ },
+ {
+  "fn": "weekTruth",
+  "args": [
+   [
+    "0:00",
+    "0:00",
+    "0:00",
+    "0:00",
+    "0:00"
+   ]
+  ],
+  "expected": "5 days: 0 min, 0.00 decimal hours, 0 min a day on average."
+ },
+ {
+  "fn": "weekTruth",
+  "args": [
+   [
+    "8:00"
+   ]
+  ],
+  "expected": "1 day: 8 h, 8.00 decimal hours, 8 h a day on average."
+ },
+ {
+  "fn": "weekTruth",
+  "args": [
+   [
+    "7:45",
+    "8:61"
+   ]
+  ],
+  "expected": "ERR:each day must look like 7:45 (hours:minutes)"
+ },
+ {
+  "fn": "weekTruth",
+  "args": [
+   [
+    "7:45",
+    "eight"
+   ]
+  ],
+  "expected": "ERR:each day must look like 7:45 (hours:minutes)"
+ },
+ {
+  "fn": "weekTruth",
+  "args": [
+   []
+  ],
+  "expected": "ERR:enter at least one day"
+ },
+ {
+  "fn": "decimalTruth",
+  "args": [
+   7.75
+  ],
+  "expected": "7.75 hours is 7 h 45 min."
+ },
+ {
+  "fn": "decimalTruth",
+  "args": [
+   1
+  ],
+  "expected": "1 hour is 1 h."
+ },
+ {
+  "fn": "decimalTruth",
+  "args": [
+   0.1
+  ],
+  "expected": "0.1 hours is 6 min."
+ },
+ {
+  "fn": "decimalTruth",
+  "args": [
+   38.33
+  ],
+  "expected": "38.33 hours is 38 h 20 min."
+ },
+ {
+  "fn": "decimalTruth",
+  "args": [
+   0
+  ],
+  "expected": "0 hours is 0 min."
+ },
+ {
+  "fn": "decimalTruth",
+  "args": [
+   -1
+  ],
+  "expected": "ERR:hours must be between 0 and 1000"
+ }
+]
