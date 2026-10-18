@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timesheet Math - clock-time arithmetic</title>
+<style>
+  :root { --accent:#0f6f73; --ink:#162a2b; --paper:#f1f8f8; --soft:#dcefef; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:Georgia, "Times New Roman", serif; background:var(--paper); color:var(--ink); line-height:1.55; }
+  main { max-width:660px; margin:0 auto; }
+  .boundary { background:#fdeaea; border-left:6px solid #b03030; color:#5c1c1c; border-radius:6px; padding:1rem 1.1rem; }
+  .boundary strong { display:block; margin-bottom:.3rem; }
+  body { padding:2.5rem 1.2rem; }
+  h1 { font-size:2.2rem; color:var(--accent); }
+  p.lede { font-size:1.12rem; margin:.9rem 0 1.6rem; }
+  .boundary { margin-bottom:1.6rem; }
+  section { background:var(--soft); border-left:5px solid var(--accent); border-radius:6px; padding:1.1rem 1.2rem; margin-bottom:1.2rem; }
+  h2 { font-size:1.18rem; margin-bottom:.5rem; }
+  section p { font-size:.98rem; }
+  a.btn { display:inline-block; margin-top:1.4rem; background:var(--accent); color:#fff; text-decoration:none; padding:.8rem 1.6rem; border-radius:999px; font-size:1.05rem; }
+  footer { margin-top:2.2rem; font-size:.85rem; color:#587576; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Timesheet Math</h1>
+  <p class="lede">Clock times come in sixtieths. Timesheets want hundredths. Somebody has to convert.</p>
+  <div class="boundary">
+    <strong>Boundary: arithmetic only</strong>
+    Timesheet Math adds and converts the times you type. It does not say what you are owed, what breaks or overtime the law or your contract requires, or what to put on a form. Your employer's rules and local law decide that.
+  </div>
+  <section>
+    <h2>The shift truth</h2>
+    <p>9:00 to 17:30, 30 min unpaid break: 8 h worked, 8.00 decimal hours. Overnight shifts roll past midnight.</p>
+  </section>
+  <section>
+    <h2>The week truth</h2>
+    <p>Five days of 7:45, 8:00, 7:30, 8:15 and 7:45 add up to 39 h 15 min, 39.25 decimal hours, 7 h 51 min a day on average.</p>
+  </section>
+  <section>
+    <h2>The decimal truth</h2>
+    <p>7.75 hours is 7 h 45 min. Rounded to the minute.</p>
+  </section>
+  <a class="btn" href="app.html">Run your numbers</a>
+  <footer>Timesheet Math is exact arithmetic over the times you enter, nothing more.</footer>
+</main>
+</body>
+</html>
